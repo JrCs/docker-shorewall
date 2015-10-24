@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run -it --rm \
+	-v /etc/shorewall:/etc/shorewall \
+    -v /var/lib/shorewall:/var/lib/shorewall \
+    -v /var/lock/subsys:/var/lock/subsys \
+    --net=host \
+    --privileged \
+	shorewall \
+    $@
